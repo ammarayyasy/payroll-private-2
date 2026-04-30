@@ -14,7 +14,7 @@
                 <div>
                     <h2 class="text-2xl font-bold mb-2">Presensi</h2>
                     <div id="map" class="mb-4 border border-amber-300 rounded"></div>
-                    <button type="button" onclick="tagLocation()" class="px-4 py-2 bg-blue-500 text-white rounded">Tag Location</button>
+                    <button type="button" onclick="tagLocation()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Tag Location</button>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
                     map.removeLayer(marker);
                 }
 
-                marker = L.marker([{{ $schedule->office->latitude }}, {{ $schedule->office->longitude }}]).addTo(map);
+                marker = L.marker([lat, lng]).addTo(map);
                 marker.bindPopup("<b>Hello world!</b><br>I am {{ $schedule->user->name }}").openPopup();
                 map.setView([lat, lng], 16);
 

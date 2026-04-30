@@ -8,6 +8,8 @@ class Schedule extends Model
 {
     protected $guarded = ['id'];
 
+    protected $with = ['office', 'user', 'shift'];
+
     public function office()
     {
         return $this->belongsTo(Office::class);
